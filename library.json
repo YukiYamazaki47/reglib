@@ -1,0 +1,21 @@
+{
+    "name": "reglib",
+    "version": "0.0.1",
+    "description": "A Arduino Lib for conn betwean Arduino and Rasberry pi",
+    "keywords": "Serial",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/YukiYamazaki47/reglib.git"
+    },
+    "authors":
+    [
+        {
+            "name": "Yuki Yamazaki",
+            "email": "yuki4719901337@gmail.com",
+            "maintainer": true
+        }
+    ],
+    "frameworks": "arduino",
+    "platforms": "*"
+}
