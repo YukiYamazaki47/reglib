@@ -13,7 +13,7 @@ public:
     RIO();
     void init(HardwareSerial& serial);
     void update();
-    void set_activate(void (*func)(byte *data[PAYLOD_SIZE]));
+    void set_activate(uint8_t id,void (*func)(byte *data[PAYLOD_SIZE]));
 private:
     byte buffer[MSG_SIZE];
     void (*fnlut[N_REGS])(byte *data[PAYLOD_SIZE]) = {default_fn};
