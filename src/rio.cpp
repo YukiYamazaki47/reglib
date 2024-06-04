@@ -14,8 +14,8 @@ void RIO::update(){
 
         if (verifyChecksum())
         {
-            fnlut[buffer[0] & 0x0f](&cb);
             Serial.write(0x00);
+            fnlut[buffer[0] & 0x0f](&cb);
         }else{
             Serial.write(0x00);
         }
