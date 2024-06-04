@@ -5,11 +5,11 @@ RIO::RIO() {
 
 }
 
-void init(HardwareSerial& serial = Serial){
+void RIO::init(HardwareSerial& serial = Serial){
     userial = serial;
 }
 
-void update(){
+void RIO::update(){
     if (userial.available() >= MSG_SIZE)
     {
         userial.readBytes(buffer,MSG_SIZE);
@@ -18,7 +18,7 @@ void update(){
     }
 }
 
-void set_activate(uint8_t id,void (*func)(byte *data[PAYLOD_SIZE])){
+void RIO::set_activate(uint8_t id,void (*func)(byte *data[PAYLOD_SIZE])){
     fnlut[id & 0x0f] = func;
 }
 
