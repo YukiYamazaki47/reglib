@@ -17,6 +17,7 @@ public:
 private:
     byte buffer[MSG_SIZE];
     void (*fnlut[N_REGS])(byte data[PAYLOD_SIZE]) = {default_fn};
+    HardwareSerial& userial;
 };
 
 #endif // LIB_REGLIB
