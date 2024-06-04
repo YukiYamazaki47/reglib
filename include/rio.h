@@ -17,7 +17,7 @@ private:
     byte buffer[MSG_SIZE];
     byte *cb;
     void (*fnlut[N_REGS])(byte *data[PAYLOD_SIZE]) = {default_fn};
-    bool verifyChecksum(byte* message);
+    bool verifyChecksum();
 };
 
 #endif // LIB_REGLIB
