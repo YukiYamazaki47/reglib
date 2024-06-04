@@ -1,6 +1,6 @@
 {
     "name": "reglib",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A Arduino Lib for conn betwean Arduino and Rasberry pi",
     "keywords": "Serial",
     "repository":

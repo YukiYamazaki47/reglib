@@ -14,13 +14,11 @@ void update(){
     {
         userial.readBytes(buffer,MSG_SIZE);
 
-        
-
+        fnlut[buffer[0] & 0x0f](buffer + 1);
     }
-    
 }
 
-void set_activate(){
-    
+void set_activate(uint8_t id,void (*func)(byte *data[PAYLOD_SIZE])){
+    fnlut[id & 0x0f] = func;
 }
 
