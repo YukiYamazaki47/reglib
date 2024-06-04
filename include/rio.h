@@ -11,13 +11,12 @@ void default_fn(byte *data[PAYLOD_SIZE]);
 class RIO {
 public:
     RIO();
-    void init(HardwareSerial& serial);
     void update();
     void set_activate(uint8_t id,void (*func)(byte *data[PAYLOD_SIZE]));
 private:
     byte buffer[MSG_SIZE];
+    byte *cb;
     void (*fnlut[N_REGS])(byte *data[PAYLOD_SIZE]) = {default_fn};
-    HardwareSerial& userial;
 };
 
 #endif // LIB_REGLIB
