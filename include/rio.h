@@ -11,7 +11,7 @@ void default_fn(byte data[]);
 class rio {
 public:
     rio();
-    void init();
+    void init(HardwareSerial& serial);
     void update();
     void set_update();
 private:
