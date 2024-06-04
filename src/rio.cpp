@@ -12,10 +12,23 @@ void RIO::update(){
     {
         Serial.readBytes(buffer,MSG_SIZE);
 
-        
-
-        fnlut[buffer[0] & 0x0f](&cb);
+        if (verifyChecksum())
+        {
+            fnlut[buffer[0] & 0x0f](&cb);
+            Serial.write(0x00);
+        }else{
+            Serial.write(0x00);
+        }
     }
+}
+
+bool RIO::verifyChecksum() {
+    byte checksum = 0x00;
+    for (int i = 0; i < MSG_SIZE; i++) {
+        checksum ^= buffer[i];
+    }
+    // If the final checksum is 0, the message is valid
+    return (checksum == 0x00);
 }
 
 void RIO::set_activate(uint8_t id,void (*func)(byte *data[PAYLOD_SIZE])){
