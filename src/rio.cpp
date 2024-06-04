@@ -2,7 +2,7 @@
 #include "rio.h"
 
 RIO::RIO() {
-    cb = &buffer;
+    cb = buffer;
 
     cb++;
 }
