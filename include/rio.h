@@ -6,14 +6,14 @@
 #define PAYLOD_SIZE 2
 #define MSG_SIZE PAYLOD_SIZE + 2
 
-void default_fn(byte data[]);
+void default_fn(byte data[PAYLOD_SIZE]);
 
-class rio {
+class RIO {
 public:
-    rio();
+    RIO();
     void init(HardwareSerial& serial);
     void update();
-    void set_update();
+    void set_activate();
 private:
     byte buffer[MSG_SIZE];
     void (*fnlut[N_REGS])(byte data[PAYLOD_SIZE]) = {default_fn};
